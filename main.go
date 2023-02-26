@@ -1,6 +1,10 @@
 package main
 
+import (
+	cmd "github.com/akhil/proper_blockchain/cmd"
+)
+
 func main() {
-	cli := CLI{}
-	cli.Run()
+	cmd := cmd.CLI{}
+	cmd.Run()
 }

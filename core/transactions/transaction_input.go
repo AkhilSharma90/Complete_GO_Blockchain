@@ -1,6 +1,10 @@
-package main
+package core
 
-import "bytes"
+import (
+	"bytes"
+
+	wallets "github.com/akhil/proper_blockchain/core/wallets"
+)
 
 // TXInput represents a transaction input
 type TXInput struct {
@@ -12,7 +16,7 @@ type TXInput struct {
 
 // UsesKey checks whether the address initiated the transaction
 func (in *TXInput) UsesKey(pubKeyHash []byte) bool {
-	lockingHash := HashPubKey(in.PubKey)
+	lockingHash := wallets.HashPubKey(in.PubKey)
 
 	return bytes.Compare(lockingHash, pubKeyHash) == 0
 }

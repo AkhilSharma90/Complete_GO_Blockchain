@@ -1,4 +1,4 @@
-package main
+package cmd
 
 import (
 	"flag"
@@ -6,6 +6,8 @@ import (
 	"log"
 
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 // CLI responsible for processing command line arguments
@@ -33,6 +35,7 @@ func (cli *CLI) validateArgs() {
 // Run parses command line arguments and processes commands
 func (cli *CLI) Run() {
 	cli.validateArgs()
+	godotenv.Load(".env")
 
 	nodeID := os.Getenv("NODE_ID")
 	if nodeID == "" {

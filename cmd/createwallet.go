@@ -1,9 +1,13 @@
-package main
+package cmd
 
-import "fmt"
+import (
+	"fmt"
+
+	wallets "github.com/akhil/proper_blockchain/core/wallets"
+)
 
 func (cli *CLI) createWallet(nodeID string) {
-	wallets, _ := NewWallets(nodeID)
+	wallets, _ := wallets.NewWallets(nodeID)
 	address := wallets.CreateWallet()
 	wallets.SaveToFile(nodeID)
 
