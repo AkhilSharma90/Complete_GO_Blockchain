@@ -1,6 +1,7 @@
 # A Complete Blockchain Using GO
 
-Simple blockchain implementation in Go.
+Adbanced blockchain implementation in Go.
+Using all sorts of concepts like Wallets, Nodes, UTXOs, transactions, block iterators etc.
 
 ## Usage
 
